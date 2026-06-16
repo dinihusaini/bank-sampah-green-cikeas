@@ -1,0 +1,16 @@
+# database credential
+config/koneksi.php
+
+# logs
+error_log
+*.log
+
+# testing
+test.php
+
+# editor
+.vscode/
+
+# system
+.DS_Store
+Thumbs.db
