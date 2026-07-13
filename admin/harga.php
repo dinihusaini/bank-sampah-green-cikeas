@@ -7,7 +7,6 @@ if(!isset($_SESSION['login'])){
     exit;
 }
 
-// UPDATE HARGA
 if(isset($_POST['update'])){
 
     $id = $_POST['id_jenis'];
@@ -37,10 +36,8 @@ if(isset($_POST['update'])){
     
     <title>Setting Harga Sampah</title>
 
-    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
     <style>
@@ -88,7 +85,6 @@ if(isset($_POST['update'])){
             overflow:hidden;
         }
         
-        /* ===== RESPONSIVE HP ===== */
         @media (max-width:768px){
         
             body{
@@ -100,8 +96,6 @@ if(isset($_POST['update'])){
                 max-width:95% !important;
             }
         
-        
-            /* NAVBAR */
             .navbar .container{
                 flex-direction:column;
                 gap:12px;
@@ -128,8 +122,6 @@ if(isset($_POST['update'])){
                 padding:5px 10px;
             }
         
-        
-            /* HERO */
             .hero-banner{
                 height:320px !important;
             }
@@ -149,8 +141,6 @@ if(isset($_POST['update'])){
                 padding:8px 18px;
             }
         
-        
-            /* CARD ANGKA */
             .col-md-3{
                 width:50%;
             }
@@ -163,14 +153,10 @@ if(isset($_POST['update'])){
                 font-size:15px;
             }
         
-        
-            /* VISI MISI */
             .col-md-6{
                 width:100%;
             }
         
-        
-            /* TEXT */
             h2{
                 font-size:24px;
             }
@@ -179,8 +165,6 @@ if(isset($_POST['update'])){
                 font-size:15px;
             }
         
-        
-            /* tombol WA */
             .wa-btn{
                 width:55px;
                 height:55px;
@@ -248,17 +232,14 @@ if(isset($_POST['update'])){
 
 <body>
 
-<!-- NAVBAR -->
 <nav class="navbar navbar-dark">
     <div class="container">
 
-        <!-- LOGO -->
         <a class="navbar-brand d-flex align-items-center" href="#">
             <img src="../assets/logobs.png" width="40" class="me-2">
             Bank Sampah Green Cikeas
         </a>
 
-        <!-- BACK -->
         <a href="dashboard.php" class="btn btn-outline-light">
             <i class="bi bi-arrow-left"></i> Back
         </a>
@@ -268,7 +249,6 @@ if(isset($_POST['update'])){
 
 <div class="container mt-4">
 
-    <!-- JUDUL -->
     <div class="mb-4">
 
         <h2 class="title-page">
@@ -282,7 +262,6 @@ if(isset($_POST['update'])){
 
     </div>
 
-    <!-- TABLE -->
     <div class="table-card">
 
         <h4 class="mb-4">
