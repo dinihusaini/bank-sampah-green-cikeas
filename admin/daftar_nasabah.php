@@ -59,7 +59,6 @@ body{
     color:white;
 }
 
-/* ===== RESPONSIVE HP ===== */
         @media (max-width:768px){
         
             body{
@@ -72,7 +71,6 @@ body{
             }
         
         
-            /* NAVBAR */
             .navbar .container{
                 flex-direction:column;
                 gap:12px;
@@ -100,7 +98,6 @@ body{
             }
         
         
-            /* HERO */
             .hero-banner{
                 height:320px !important;
             }
@@ -121,7 +118,6 @@ body{
             }
         
         
-            /* CARD ANGKA */
             .col-md-3{
                 width:50%;
             }
@@ -135,13 +131,11 @@ body{
             }
         
         
-            /* VISI MISI */
             .col-md-6{
                 width:100%;
             }
         
         
-            /* TEXT */
             h2{
                 font-size:24px;
             }
@@ -151,7 +145,6 @@ body{
             }
         
         
-            /* tombol WA */
             .wa-btn{
                 width:55px;
                 height:55px;
@@ -223,7 +216,6 @@ body{
 <body>
 
 
-<!-- NAVBAR -->
 <nav class="navbar navbar-dark">
 
 <div class="container">
@@ -258,7 +250,6 @@ Admin Bank Sampah
 <div class="container mt-4">
 
 
-<!-- HEADER -->
 <div class="header-box mb-4">
 
 <h2 class="fw-bold">
@@ -294,7 +285,14 @@ Kembali
 
 </a>
 
+<a href="tambah_nasabah.php"
+class="btn btn-primary mb-3">
 
+<i class="bi bi-plus-circle"></i>
+
+Tambah Nasabah
+
+</a>
 
 <a href="cetak_nasabah.php"
 target="_blank"
@@ -447,7 +445,7 @@ Hapus
 
 </table>
 
-</div> <!-- tutup table responsive -->
+</div>
 
 
 
