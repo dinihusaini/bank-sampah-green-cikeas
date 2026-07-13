@@ -144,7 +144,6 @@ if($bulan != ''){
 
         }
         
-        /* ===== RESPONSIVE HP ===== */
         @media (max-width:768px){
         
             body{
@@ -157,7 +156,6 @@ if($bulan != ''){
             }
         
         
-            /* NAVBAR */
             .navbar .container{
                 flex-direction:column;
                 gap:12px;
@@ -185,7 +183,6 @@ if($bulan != ''){
             }
         
         
-            /* HERO */
             .hero-banner{
                 height:320px !important;
             }
@@ -206,7 +203,6 @@ if($bulan != ''){
             }
         
         
-            /* CARD ANGKA */
             .col-md-3{
                 width:50%;
             }
@@ -220,13 +216,10 @@ if($bulan != ''){
             }
         
         
-            /* VISI MISI */
             .col-md-6{
                 width:100%;
             }
         
-        
-            /* TEXT */
             h2{
                 font-size:24px;
             }
@@ -236,7 +229,6 @@ if($bulan != ''){
             }
         
         
-            /* tombol WA */
             .wa-btn{
                 width:55px;
                 height:55px;
@@ -303,10 +295,8 @@ if($bulan != ''){
 
 <body>
 
-<!-- NAVBAR -->
 <nav class="navbar navbar-dark">
     <div class="container">
-        <!-- LOGO -->
         <a class="navbar-brand d-flex align-items-center" href="dashboard_nasabah.php">
             <img src="../assets/logobs.png" width="40" class="me-2">
             Bank Sampah Green Cikeas
@@ -320,7 +310,6 @@ if($bulan != ''){
 
 <div class="container mt-4">
 
-    <!-- JUDUL -->
     <div class="mb-4">
         <h2 class="title-page">
             <i class="bi bi-person-check-fill"></i>
@@ -332,7 +321,6 @@ if($bulan != ''){
         </p>
     </div>
 
-    <!-- FORM ABSENSI -->
     <div class="form-card mb-5">
 
         <form method="POST">
@@ -342,7 +330,6 @@ if($bulan != ''){
                 Cari Nasabah Terdaftar
             </h5>
 
-            <!-- SEARCH USER -->
             <div class="mb-3">
 
                 <label class="form-label">
@@ -436,7 +423,6 @@ if($bulan != ''){
 
     </div>
 
-    <!-- FILTER BULAN -->
     <div class="d-flex justify-content-between align-items-center mb-3">
 
         <form method="GET" class="d-flex gap-2">
@@ -463,7 +449,6 @@ if($bulan != ''){
 
     </div>
 
-    <!-- TABLE -->
     <div class="table-card">
 
         <h4 class="mb-4 d-flex justify-content-between">
@@ -551,7 +536,7 @@ if($bulan != ''){
 
             </table>
 
-        </div> <!-- tutup table responsive -->
+        </div>
 
 
 
