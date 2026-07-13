@@ -7,11 +7,9 @@ if(!isset($_SESSION['login'])){
     exit;
 }
 
-// FILTER
 $bulan = isset($_GET['bulan']) ? $_GET['bulan'] : '';
 $tahun = isset($_GET['tahun']) ? $_GET['tahun'] : date('Y');
 
-// BULAN INDONESIA
 $bulanIndo = [
     1=>'Januari','Februari','Maret','April','Mei','Juni',
     'Juli','Agustus','September','Oktober','November','Desember'
@@ -26,10 +24,8 @@ $bulanIndo = [
     
     <title>Laporan Tabungan Nasabah</title>
 
-    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
     <style>
@@ -113,7 +109,6 @@ $bulanIndo = [
 
         }
         
-        /* ===== RESPONSIVE HP ===== */
         @media (max-width:768px){
         
             body{
@@ -125,8 +120,6 @@ $bulanIndo = [
                 max-width:95% !important;
             }
         
-        
-            /* NAVBAR */
             .navbar .container{
                 flex-direction:column;
                 gap:12px;
@@ -153,8 +146,6 @@ $bulanIndo = [
                 padding:5px 10px;
             }
         
-        
-            /* HERO */
             .hero-banner{
                 height:320px !important;
             }
@@ -174,8 +165,6 @@ $bulanIndo = [
                 padding:8px 18px;
             }
         
-        
-            /* CARD ANGKA */
             .col-md-3{
                 width:50%;
             }
@@ -188,14 +177,10 @@ $bulanIndo = [
                 font-size:15px;
             }
         
-        
-            /* VISI MISI */
             .col-md-6{
                 width:100%;
             }
         
-        
-            /* TEXT */
             h2{
                 font-size:24px;
             }
@@ -204,8 +189,6 @@ $bulanIndo = [
                 font-size:15px;
             }
         
-        
-            /* tombol WA */
             .wa-btn{
                 width:55px;
                 height:55px;
@@ -273,17 +256,14 @@ $bulanIndo = [
 
 <body>
 
-<!-- NAVBAR -->
 <nav class="navbar navbar-dark">
     <div class="container">
 
-        <!-- LOGO -->
         <a class="navbar-brand d-flex align-items-center" href="#">
             <img src="../assets/logobs.png" width="40" class="me-2">
             Bank Sampah Green Cikeas
         </a>
 
-        <!-- BACK -->
         <a href="dashboard.php" class="btn btn-outline-light">
             <i class="bi bi-arrow-left"></i> Back
         </a>
@@ -293,7 +273,6 @@ $bulanIndo = [
 
 <div class="container mt-4">
 
-    <!-- JUDUL -->
     <div class="mb-4">
 
         <h2 class="title-page">
@@ -307,12 +286,10 @@ $bulanIndo = [
 
     </div>
 
-    <!-- FILTER -->
     <div class="filter-card mb-4">
 
         <form method="GET" class="row g-3 align-items-end">
 
-            <!-- NASABAH -->
             <div class="col-md-4">
 
                 <label class="form-label">
@@ -344,7 +321,6 @@ $bulanIndo = [
 
             </div>
 
-            <!-- BULAN -->
             <div class="col-md-3">
 
                 <label class="form-label">
@@ -375,7 +351,6 @@ $bulanIndo = [
 
             </div>
 
-            <!-- TAHUN -->
             <div class="col-md-2">
 
                 <label class="form-label">
@@ -401,7 +376,6 @@ $bulanIndo = [
 
             </div>
 
-            <!-- BUTTON -->
             <div class="col-md-3">
 
                 <button type="submit" class="btn btn-success">
@@ -420,7 +394,6 @@ if(isset($_GET['id_nasabah'])){
 
     $id = $_GET['id_nasabah'];
 
-    // NAMA NASABAH
     $nasabah_nama = mysqli_query($conn, "
     SELECT nama_nasabah 
     FROM absensi 
@@ -429,14 +402,12 @@ if(isset($_GET['id_nasabah'])){
 
     $n_nama = mysqli_fetch_assoc($nasabah_nama);
 
-    // FILTER QUERY
     $filter_bulan = '';
 
     if($bulan != ''){
         $filter_bulan = "AND DATE_FORMAT(p.tanggal, '%m') = '$bulan'";
     }
 
-    // QUERY
     $data = mysqli_query($conn, "
     SELECT 
         j.nama_jenis,
@@ -459,7 +430,6 @@ if(isset($_GET['id_nasabah'])){
     ");
 ?>
 
-    <!-- TABLE -->
     <div class="table-card">
 
         <div class="d-flex justify-content-between align-items-center mb-4">
@@ -531,7 +501,6 @@ if(isset($_GET['id_nasabah'])){
 
                 <?php } ?>
 
-                <!-- TOTAL -->
                 <tr class="table-success fw-bold">
 
                     <td colspan="2" class="text-end">
