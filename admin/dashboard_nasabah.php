@@ -30,11 +30,9 @@ $totalAktivitas = 12;
 
 <title>Dashboard Nasabah</title>
 
-    <!-- Bootstrap + Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
-    <!-- SweetAlert -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <style>
@@ -42,7 +40,6 @@ $totalAktivitas = 12;
             background-color: #f8f9fa;
         }
 
-        /* tombol aktif */
         .btn-active {
             background-color: #98ba7d !important;
             color: black !important;
@@ -63,7 +60,6 @@ $totalAktivitas = 12;
             transition: 0.3s;
         }
 
-        /* VISI MISI */
         .card-visi {
             background: white;
             padding: 25px;
@@ -178,7 +174,6 @@ $totalAktivitas = 12;
             display: none;
         }
 
-        /* GALLERY */
         .gallery-card{
             background: white;
             border-radius: 15px;
@@ -204,7 +199,6 @@ $totalAktivitas = 12;
             font-weight: 600;
         }
 
-        /* FOOTER */
         .footer-links li{
             margin-bottom: 10px;
         }
@@ -243,14 +237,12 @@ $totalAktivitas = 12;
             transform: none !important;
         }
 
-        /* MAPS */
         .map-container{
             overflow: hidden;
             border-radius: 18px;
             background: white;
         }
         
-        /* ===== RESPONSIVE HP ===== */
         @media (max-width:768px){
         
             body{
@@ -263,7 +255,6 @@ $totalAktivitas = 12;
             }
         
         
-            /* NAVBAR */
             .navbar .container{
                 flex-direction:column;
                 gap:12px;
@@ -291,7 +282,6 @@ $totalAktivitas = 12;
             }
         
         
-            /* HERO */
             .hero-banner{
                 height:320px !important;
             }
@@ -312,7 +302,6 @@ $totalAktivitas = 12;
             }
         
         
-            /* CARD ANGKA */
             .col-md-3{
                 width:50%;
             }
@@ -326,13 +315,11 @@ $totalAktivitas = 12;
             }
         
         
-            /* VISI MISI */
             .col-md-6{
                 width:100%;
             }
         
         
-            /* TEXT */
             h2{
                 font-size:24px;
             }
@@ -342,7 +329,6 @@ $totalAktivitas = 12;
             }
         
         
-            /* tombol WA */
             .wa-btn{
                 width:55px;
                 height:55px;
@@ -379,17 +365,14 @@ $totalAktivitas = 12;
 
 <body class="d-flex flex-column min-vh-100">
 
-<!-- NAVBAR -->
 <nav class="navbar navbar-dark" style="background-color:#0c5f24;">
     <div class="container d-flex justify-content-between align-items-center">
 
-        <!-- LOGO -->
         <a class="navbar-brand d-flex align-items-center" href="dashboard_nasabah.php">
             <img src="../assets/logobs.png" width="40" class="me-2">
             Bank Sampah Green Cikeas
         </a>
 
-        <!-- MENU -->
         <div>
             <a href="dashboard_nasabah.php" class="btn btn-sm <?= ($halaman=='dashboard') ? 'btn-active' : 'btn-light' ?>">Home</a>
             <a href="tentang.php" class="btn btn-sm <?= ($halaman=='tentang') ? 'btn-active' : 'btn-light' ?>">Tentang</a>
@@ -408,7 +391,6 @@ $totalAktivitas = 12;
             <?php } ?>
         </div>
 
-        <!-- USER -->
         <div class="d-flex align-items-center gap-2">
         
         <?php if(isset($_SESSION['login'])){ ?>
@@ -443,7 +425,7 @@ $totalAktivitas = 12;
 </nav>
 
 <main class="flex-fill">
-<!-- HERO BANNER -->
+
 <div class="hero-banner" style="
     background: url('../assets/banner.jpeg') center/cover no-repeat;
     height: 400px;
@@ -473,7 +455,6 @@ $totalAktivitas = 12;
     </div>
 </div>
 
-<!-- CONTENT -->
 <div class="container mt-4">
 
     <div class="container mt-4">
@@ -489,7 +470,6 @@ $totalAktivitas = 12;
         </p>
     </div>
 
-    <!-- DESKRIPSI -->
     <div class="p-4 bg-white shadow-sm rounded mb-4">
         <h2>Bank Sampah Green Cikeas</h2>
 
@@ -575,7 +555,6 @@ $totalAktivitas = 12;
                 </div>
             </div>
 
-            <!-- AKTIVITAS -->
             <div class="col-6 col-md-3 mb-3">
                 <div class="card shadow-sm p-3 highlight-card text-center h-100">
                     <h5>📅 Aktivitas</h5>
@@ -593,7 +572,6 @@ $totalAktivitas = 12;
         </div>
     </div>
 
-    <!-- VISI MISI -->
     <div class="row">
 
         <div class="col-md-6 mb-3 d-flex">
@@ -622,14 +600,12 @@ $totalAktivitas = 12;
 
     <div class="container mt-5">
         <div class="row align-items-center">
-            <!-- KIRI (LINGKARAN) -->
              <div class="col-md-4 text-center mb-4">
                 <div class="circle-box">
                     DAMPAK<br>SAMPAH<br>PADA<br>LINGKUNGAN
                 </div>
             </div>
             
-            <!-- KANAN (TEXT BOX) -->
              <div class="col-md-8">
                 <div class="impact-box">
                     Sampah yang tidak dikelola dengan baik memberikan dampak serius terhadap lingkungan.
@@ -647,7 +623,6 @@ $totalAktivitas = 12;
         </div>
     </div>
 
-    <!-- GALLERY KEGIATAN -->
     <div class="container mt-5">
         
         <div class="text-center mb-4">
@@ -660,7 +635,6 @@ $totalAktivitas = 12;
 
         <div class="row">
 
-            <!-- FOTO 1 -->
             <div class="col-6 col-md-3 mb-4">
                 <div class="gallery-card">
                     <img src="../assets/kegiatan1.jpeg"
@@ -672,7 +646,6 @@ $totalAktivitas = 12;
                 </div>
             </div>
 
-            <!-- FOTO 2 -->
             <div class="col-6 col-md-3 mb-4">
                 <div class="gallery-card">
                     <img src="../assets/kegiatan2.jpeg"
@@ -684,7 +657,6 @@ $totalAktivitas = 12;
                 </div>
             </div>
 
-            <!-- FOTO 3 -->
             <div class="col-6 col-md-3 mb-4">
                 <div class="gallery-card">
                     <img src="../assets/kegiatan3.jpeg"
@@ -696,7 +668,6 @@ $totalAktivitas = 12;
                 </div>
             </div>
 
-            <!-- FOTO 4 -->
             <div class="col-6 col-md-3 mb-4">
                 <div class="gallery-card">
                     <img src="../assets/kegiatan4.jpeg"
@@ -712,7 +683,6 @@ $totalAktivitas = 12;
 
     </div>
 
-    <!-- LOKASI -->
     <div class="container mt-5">
         <div class="text-center mb-4">
             <h2 class="fw-bold">Lokasi Bank Sampah</h2>
@@ -735,7 +705,6 @@ $totalAktivitas = 12;
         </div>
     </div>
 
-    <!-- FAQ -->
     <div class="container mt-5 mb-5">
         <div class="text-center mb-4">
             <h2 class="fw-bold">Pertanyaan Umum</h2>
@@ -769,7 +738,6 @@ $totalAktivitas = 12;
                 </div>
             </div>
 
-            <!-- ITEM 2 -->
             <div class="accordion-item mb-3 border-0 shadow-sm rounded overflow-hidden">
                 <h2 class="accordion-header">
                     <button class="accordion-button collapsed fw-semibold"
@@ -792,7 +760,6 @@ $totalAktivitas = 12;
                 </div>
             </div>
 
-            <!-- ITEM 3 -->
             <div class="accordion-item mb-3 border-0 shadow-sm rounded overflow-hidden">
                 <h2 class="accordion-header">
                     <button class="accordion-button collapsed fw-semibold"
@@ -815,7 +782,6 @@ $totalAktivitas = 12;
                 </div>
             </div>
 
-            <!-- ITEM 4 -->
             <div class="accordion-item border-0 shadow-sm rounded overflow-hidden">
                 <h2 class="accordion-header">
                     <button class="accordion-button collapsed fw-semibold"
@@ -842,7 +808,6 @@ $totalAktivitas = 12;
 
     </div>
 
-    <!-- FLOATING WHATSAPP -->
     <div class="wa-popup">
         <div class="wa-box" id="waBox">
             <h6 class="mb-2">Hubungi Admin</h6>
@@ -864,7 +829,6 @@ $totalAktivitas = 12;
 
 </div>
 
-<!-- POPUP -->
 <?php if(isset($_SESSION['show_popup'])) { ?>
 <script>
 Swal.fire({
@@ -875,7 +839,6 @@ Swal.fire({
 </script>
 <?php unset($_SESSION['show_popup']); } ?>
 
-<!-- ANIMASI -->
 <script>
 window.addEventListener("load", () => {
     const cards = document.querySelectorAll(".card-visi");
