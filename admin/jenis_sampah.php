@@ -2,7 +2,6 @@
 session_start();
 include '../config/koneksi.php';
 
-// penanda halaman aktif
 $halaman = "jenis";
 ?>
 
@@ -67,7 +66,6 @@ $halaman = "jenis";
             display: none;
         }
 
-        /* FOOTER */
         .footer-links li{
             margin-bottom: 10px;
         }
@@ -106,7 +104,6 @@ $halaman = "jenis";
             transform: none !important;
         }
         
-        /* ===== RESPONSIVE HP ===== */
         @media (max-width:768px){
         
             body{
@@ -118,8 +115,6 @@ $halaman = "jenis";
                 max-width:95% !important;
             }
         
-        
-            /* NAVBAR */
             .navbar .container{
                 flex-direction:column;
                 gap:12px;
@@ -146,8 +141,6 @@ $halaman = "jenis";
                 padding:5px 10px;
             }
         
-        
-            /* HERO */
             .hero-banner{
                 height:320px !important;
             }
@@ -167,8 +160,6 @@ $halaman = "jenis";
                 padding:8px 18px;
             }
         
-        
-            /* CARD ANGKA */
             .col-md-3{
                 width:50%;
             }
@@ -181,14 +172,10 @@ $halaman = "jenis";
                 font-size:15px;
             }
         
-        
-            /* VISI MISI */
             .col-md-6{
                 width:100%;
             }
         
-        
-            /* TEXT */
             h2{
                 font-size:24px;
             }
@@ -197,8 +184,6 @@ $halaman = "jenis";
                 font-size:15px;
             }
         
-        
-            /* tombol WA */
             .wa-btn{
                 width:55px;
                 height:55px;
@@ -235,7 +220,6 @@ $halaman = "jenis";
 
 <body class="d-flex flex-column min-vh-100">
 
-<!-- NAVBAR -->
 <nav class="navbar navbar-dark" style="background-color:#0c5f24;">
     <div class="container">
         <a class="navbar-brand d-flex align-items-center" href="dashboard_nasabah.php">
@@ -264,7 +248,6 @@ $halaman = "jenis";
             <?php } ?>
         </div>
 
-        <!-- USER -->
         <div class="d-flex align-items-center gap-2">
         
         <?php if(isset($_SESSION['login'])){ ?>
@@ -337,7 +320,7 @@ $halaman = "jenis";
         <div class="wa-box" id="waBox">
             <h6 class="mb-2">Hubungi Admin</h6>
             <p class="small text-muted mb-2">
-                Ada pertanyaan? Hubungi admin kami 👋
+                Ada pertanyaan? Hubungi admin kami ðŸ‘‹
             </p>
             
             <a href="https://wa.me/6281286918628"
