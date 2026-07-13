@@ -60,7 +60,6 @@ $halaman = "tentang";
         transform: translateY(-5px) scale(1.03);
     }
     
-    /* warna tiap step */
     .step1 { background: #6ec1e4; }
     .step2 { background: #8e44ad; }
     .step3 { background: #e91e63; }
@@ -77,7 +76,6 @@ $halaman = "tentang";
         font-size: 14px;
     }
     
-    /* responsive */
     @media (max-width: 768px) {
         .flow-step {
             width: 100%;
@@ -188,8 +186,7 @@ $halaman = "tentang";
         right: 0;
         display: none;
     }
-
-    /* FOOTER */
+        
     .footer-links li{
         margin-bottom: 10px;
     }
@@ -228,7 +225,6 @@ $halaman = "tentang";
         transform: none !important;
     }
     
-    /* ===== RESPONSIVE HP ===== */
         @media (max-width:768px){
         
             body{
@@ -240,8 +236,6 @@ $halaman = "tentang";
                 max-width:95% !important;
             }
         
-        
-            /* NAVBAR */
             .navbar .container{
                 flex-direction:column;
                 gap:12px;
@@ -268,8 +262,6 @@ $halaman = "tentang";
                 padding:5px 10px;
             }
         
-        
-            /* HERO */
             .hero-banner{
                 height:320px !important;
             }
@@ -289,8 +281,6 @@ $halaman = "tentang";
                 padding:8px 18px;
             }
         
-        
-            /* CARD ANGKA */
             .col-md-3{
                 width:50%;
             }
@@ -303,14 +293,10 @@ $halaman = "tentang";
                 font-size:15px;
             }
         
-        
-            /* VISI MISI */
             .col-md-6{
                 width:100%;
             }
         
-        
-            /* TEXT */
             h2{
                 font-size:24px;
             }
@@ -319,8 +305,6 @@ $halaman = "tentang";
                 font-size:15px;
             }
         
-        
-            /* tombol WA */
             .wa-btn{
                 width:55px;
                 height:55px;
@@ -357,7 +341,6 @@ $halaman = "tentang";
 
 <body class="d-flex flex-column min-vh-100">
 
-<!-- NAVBAR -->
 <nav class="navbar navbar-dark" style="background-color:#0c5f24;">
     <div class="container d-flex justify-content-between align-items-center">
         <a class="navbar-brand d-flex align-items-center" href="dashboard_nasabah.php">
@@ -386,7 +369,6 @@ $halaman = "tentang";
             <?php } ?>
         </div>
 
-        <!-- USER -->
         <div class="d-flex align-items-center gap-2">
         
         <?php if(isset($_SESSION['login'])){ ?>
@@ -422,7 +404,6 @@ $halaman = "tentang";
 <main class="flex-fill">
 <div class="container mt-4">
 
-    <!-- PROFIL -->
     <div class="p-4 bg-white shadow-sm rounded mb-4">
         <img src="../assets/tentangbs.jpeg"
         class="img-fluid rounded shadow mt-3 w-100"
@@ -452,7 +433,6 @@ $halaman = "tentang";
         </p>
     </div>
 
-    <!-- STRUKTUR ORGANISASI -->
     <div class="p-4 bg-white shadow-sm rounded mb-4 text-center">
         <h4>Struktur Organisasi</h4>
         <p class="text-muted">Pengurus Bank Sampah Green Cikeas</p>
@@ -460,7 +440,6 @@ $halaman = "tentang";
         <img src="../assets/struktur.jpeg" class="img-fluid rounded shadow mt-3">
     </div>
 
-    <!-- PENGURUS BANK SAMPAH -->
     <div class="p-4 bg-white shadow-sm rounded mb-4">
 
         <div class="text-center mb-5">
@@ -475,7 +454,6 @@ $halaman = "tentang";
 
         <div class="row g-4 justify-content-center">
 
-            <!-- ANGGOTA 1 -->
             <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="strategy-card text-center h-100">
 
@@ -495,7 +473,6 @@ $halaman = "tentang";
                 </div>
             </div>
 
-            <!-- ANGGOTA 2 -->
             <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="strategy-card text-center h-100">
 
@@ -515,7 +492,6 @@ $halaman = "tentang";
                 </div>
             </div>
 
-            <!-- ANGGOTA 3 -->
             <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="strategy-card text-center h-100">
 
@@ -535,7 +511,6 @@ $halaman = "tentang";
                 </div>
             </div>
 
-            <!-- ANGGOTA 4 -->
             <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="strategy-card text-center h-100">
 
@@ -555,7 +530,6 @@ $halaman = "tentang";
                 </div>
             </div>
 
-            <!-- ANGGOTA 5 -->
             <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="strategy-card text-center h-100">
 
@@ -575,7 +549,6 @@ $halaman = "tentang";
                 </div>
             </div>
 
-            <!-- ANGGOTA 6 -->
             <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="strategy-card text-center h-100">
 
@@ -595,7 +568,6 @@ $halaman = "tentang";
                 </div>
             </div>
 
-            <!-- ANGGOTA 7 -->
             <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="strategy-card text-center h-100">
 
@@ -619,7 +591,6 @@ $halaman = "tentang";
 
     </div>
 
-    <!-- INFO -->
     <div class="section-card">
         <h4 class="section-title">
             <i class="bi bi-info-circle"></i> Informasi Umum
@@ -633,7 +604,6 @@ $halaman = "tentang";
         </ul>
     </div>
 
-    <!-- STATISTIK -->
     <div class="row text-center mt-4 mb-4">
         <div class="col-md-3 mb-3">
             <div class="section-card">
@@ -667,7 +637,6 @@ $halaman = "tentang";
 
     </div>
 
-    <!-- TUJUAN -->
     <div class="section-card">
         <h4 class="section-title">
             <i class="bi bi-bullseye"></i> Tujuan
@@ -681,7 +650,6 @@ $halaman = "tentang";
         </ul>
     </div>
 
-    <!-- CARA KERJA -->
     <div class="p-4 bg-white shadow-sm rounded mb-4 text-center">
         <h4 class="mb-3">Alur Penimbangan Sampah</h4>
         
@@ -730,7 +698,6 @@ $halaman = "tentang";
     <div class="p-4 bg-white shadow-sm rounded mb-4">
         <h3 class="mb-4 text-center">Strategi & Harapan Bank Sampah</h3>
         <div class="row">
-            <!-- STRATEGI -->
              <div class="col-md-6">
                 <div class="strategy-card">
                     <div class="strategy-title">
@@ -781,7 +748,6 @@ $halaman = "tentang";
                 </div>
             </div>
             
-            <!-- HARAPAN -->
              <div class="col-md-6">
                 <div class="harapan-box">
                     <h5 class="mb-3">Harapan Bank Sampah</h5>
@@ -798,7 +764,6 @@ $halaman = "tentang";
         </div>
     </div>
 
-    <!-- DOKUMENTASI -->
     <div class="p-4 bg-white shadow-sm rounded mb-4">
 
         <div class="d-flex justify-content-between align-items-center mb-4">
@@ -843,7 +808,6 @@ $halaman = "tentang";
 
     </div>
 
-    <!-- TESTIMONI -->
     <div class="p-4 bg-white shadow-sm rounded mb-4">
 
         <h3 class="text-center mb-4">
@@ -892,7 +856,6 @@ $halaman = "tentang";
 
     </div>
 
-    <!-- QUOTE -->
     <div class="text-center py-5">
 
         <h2 class="fw-bold text-success">
