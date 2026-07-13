@@ -43,7 +43,6 @@ if(isset($_POST['login'])){
     
     <title>Login</title>
 
-    <!-- Bootstrap + Icon -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
@@ -105,8 +104,7 @@ if(isset($_POST['login'])){
             right: 0;
             display: none;
         }
-        
-        /* ===== RESPONSIVE HP ===== */
+
         @media (max-width:768px){
         
             body{
@@ -118,8 +116,6 @@ if(isset($_POST['login'])){
                 max-width:95% !important;
             }
         
-        
-            /* NAVBAR */
             .navbar .container{
                 flex-direction:column;
                 gap:12px;
@@ -146,8 +142,6 @@ if(isset($_POST['login'])){
                 padding:5px 10px;
             }
         
-        
-            /* HERO */
             .hero-banner{
                 height:320px !important;
             }
@@ -167,8 +161,6 @@ if(isset($_POST['login'])){
                 padding:8px 18px;
             }
         
-        
-            /* CARD ANGKA */
             .col-md-3{
                 width:50%;
             }
@@ -181,14 +173,10 @@ if(isset($_POST['login'])){
                 font-size:15px;
             }
         
-        
-            /* VISI MISI */
             .col-md-6{
                 width:100%;
             }
         
-        
-            /* TEXT */
             h2{
                 font-size:24px;
             }
@@ -197,8 +185,6 @@ if(isset($_POST['login'])){
                 font-size:15px;
             }
         
-        
-            /* tombol WA */
             .wa-btn{
                 width:55px;
                 height:55px;
@@ -279,7 +265,7 @@ if(isset($_POST['login'])){
         <div class="wa-box" id="waBox">
             <h6 class="mb-2">Hubungi Admin</h6>
             <p class="small text-muted mb-2">
-                Ada pertanyaan? Hubungi admin kami 👋
+                Ada pertanyaan? Hubungi admin kami ðŸ‘‹
             </p>
             
             <a href="https://wa.me/6281286918628"
@@ -298,11 +284,6 @@ if(isset($_POST['login'])){
 
 <script>
 
-// =======================
-// SWEETALERT
-// =======================
-
-// SUCCESS REGISTER
 <?php if($success) { ?>
 Swal.fire({
     icon: 'success',
@@ -312,7 +293,6 @@ Swal.fire({
 });
 <?php } ?>
 
-// LOGIN GAGAL
 <?php if(isset($error)) { ?>
 Swal.fire({
     icon: 'error',
@@ -322,16 +302,10 @@ Swal.fire({
 });
 <?php } ?>
 
-// =======================
-// HAPUS ?success
-// =======================
 if (window.location.search.includes('success=1')) {
     window.history.replaceState({}, document.title, window.location.pathname);
 }
 
-// =======================
-// LOADING BUTTON
-// =======================
 document.querySelector("form").addEventListener("submit", function() {
     let btn = document.getElementById("btnLogin");
     let text = document.getElementById("btnText");
