@@ -17,7 +17,6 @@ if(
 $nama = $_SESSION['nama'];
 
 
-// cari id nasabah
 $q = mysqli_query($conn,"
 SELECT * FROM absensi
 WHERE nama_nasabah='$nama'
@@ -44,8 +43,6 @@ $id_nasabah = $d['id_nasabah'];
 $bulan = date('m');
 $tahun = date('Y');
 
-
-// cek sudah absen bulan ini
 $cek = mysqli_query($conn,"
 SELECT * FROM kehadiran_penimbangan
 WHERE id_nasabah='$id_nasabah'
@@ -65,8 +62,6 @@ if(mysqli_num_rows($cek)>0){
     exit;
 }
 
-
-// insert absen
 
 mysqli_query($conn,"
 INSERT INTO kehadiran_penimbangan
