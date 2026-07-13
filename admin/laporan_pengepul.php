@@ -7,11 +7,9 @@ if(!isset($_SESSION['login'])){
     exit;
 }
 
-// FILTER BULAN
 $bulan = isset($_GET['bulan']) ? $_GET['bulan'] : date('m');
 $tahun = isset($_GET['tahun']) ? $_GET['tahun'] : date('Y');
 
-// QUERY
 $data = mysqli_query($conn, "
 SELECT 
     j.id_jenis,
@@ -41,10 +39,8 @@ HAVING total_kg > 0
     
     <title>Laporan Pengepul</title>
 
-    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
     <style>
@@ -93,7 +89,6 @@ HAVING total_kg > 0
             border-radius:10px;
         }
         
-        /* ===== RESPONSIVE HP ===== */
         @media (max-width:768px){
         
             body{
@@ -105,8 +100,6 @@ HAVING total_kg > 0
                 max-width:95% !important;
             }
         
-        
-            /* NAVBAR */
             .navbar .container{
                 flex-direction:column;
                 gap:12px;
@@ -133,8 +126,6 @@ HAVING total_kg > 0
                 padding:5px 10px;
             }
         
-        
-            /* HERO */
             .hero-banner{
                 height:320px !important;
             }
@@ -154,8 +145,6 @@ HAVING total_kg > 0
                 padding:8px 18px;
             }
         
-        
-            /* CARD ANGKA */
             .col-md-3{
                 width:50%;
             }
@@ -168,14 +157,10 @@ HAVING total_kg > 0
                 font-size:15px;
             }
         
-        
-            /* VISI MISI */
             .col-md-6{
                 width:100%;
             }
         
-        
-            /* TEXT */
             h2{
                 font-size:24px;
             }
@@ -184,8 +169,6 @@ HAVING total_kg > 0
                 font-size:15px;
             }
         
-        
-            /* tombol WA */
             .wa-btn{
                 width:55px;
                 height:55px;
@@ -253,17 +236,14 @@ HAVING total_kg > 0
 
 <body>
 
-<!-- NAVBAR -->
 <nav class="navbar navbar-dark">
     <div class="container">
 
-        <!-- LOGO -->
         <a class="navbar-brand d-flex align-items-center" href="#">
             <img src="../assets/logobs.png" width="40" class="me-2">
             Bank Sampah Green Cikeas
         </a>
 
-        <!-- BACK -->
         <a href="dashboard.php" class="btn btn-outline-light">
             <i class="bi bi-arrow-left"></i> Back
         </a>
@@ -273,7 +253,6 @@ HAVING total_kg > 0
 
 <div class="container mt-4">
 
-    <!-- JUDUL -->
     <div class="mb-4">
 
         <h2 class="title-page">
@@ -287,12 +266,10 @@ HAVING total_kg > 0
 
     </div>
 
-    <!-- FILTER -->
     <div class="filter-card mb-4">
 
         <form method="GET" class="row g-3 align-items-end">
 
-            <!-- BULAN -->
             <div class="col-md-4">
 
                 <label class="form-label">
@@ -319,7 +296,6 @@ HAVING total_kg > 0
 
             </div>
 
-            <!-- TAHUN -->
             <div class="col-md-3">
 
                 <label class="form-label">
@@ -345,7 +321,6 @@ HAVING total_kg > 0
 
             </div>
 
-            <!-- BUTTON -->
             <div class="col-md-5">
 
                 <button type="submit" class="btn btn-success">
@@ -353,7 +328,6 @@ HAVING total_kg > 0
                     Filter
                 </button>
 
-                <!-- CETAK PDF -->
                 <a href="cetak_laporan.php?bulan=<?= $bulan; ?>&tahun=<?= $tahun; ?>"
                    target="_blank"
                    class="btn btn-danger">
@@ -369,7 +343,6 @@ HAVING total_kg > 0
 
     </div>
 
-    <!-- TABLE -->
     <div class="table-card">
 
         <h4 class="mb-4">
@@ -433,7 +406,6 @@ HAVING total_kg > 0
 
                 <?php } ?>
 
-                <!-- TOTAL -->
                 <tr class="table-success fw-bold">
 
                     <td colspan="2" class="text-end">
