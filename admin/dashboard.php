@@ -65,7 +65,6 @@ if(!isset($_SESSION['login']) || $_SESSION['role'] != 'admin'){
             text-decoration: none;
         }
         
-        /* ===== RESPONSIVE HP ===== */
         @media (max-width:768px){
         
             body{
@@ -77,8 +76,6 @@ if(!isset($_SESSION['login']) || $_SESSION['role'] != 'admin'){
                 max-width:95% !important;
             }
         
-        
-            /* NAVBAR */
             .navbar .container{
                 flex-direction:column;
                 gap:12px;
@@ -105,8 +102,6 @@ if(!isset($_SESSION['login']) || $_SESSION['role'] != 'admin'){
                 padding:5px 10px;
             }
         
-        
-            /* HERO */
             .hero-banner{
                 height:320px !important;
             }
@@ -126,8 +121,6 @@ if(!isset($_SESSION['login']) || $_SESSION['role'] != 'admin'){
                 padding:8px 18px;
             }
         
-        
-            /* CARD ANGKA */
             .col-md-3{
                 width:50%;
             }
@@ -140,14 +133,10 @@ if(!isset($_SESSION['login']) || $_SESSION['role'] != 'admin'){
                 font-size:15px;
             }
         
-        
-            /* VISI MISI */
             .col-md-6{
                 width:100%;
             }
         
-        
-            /* TEXT */
             h2{
                 font-size:24px;
             }
@@ -156,8 +145,6 @@ if(!isset($_SESSION['login']) || $_SESSION['role'] != 'admin'){
                 font-size:15px;
             }
         
-        
-            /* tombol WA */
             .wa-btn{
                 width:55px;
                 height:55px;
@@ -194,7 +181,6 @@ if(!isset($_SESSION['login']) || $_SESSION['role'] != 'admin'){
 
 <body>
 
-<!-- NAVBAR -->
 <nav class="navbar navbar-dark">
     <div class="container">
         <a class="navbar-brand fw-bold d-flex align-items-center" href="#">
@@ -224,15 +210,13 @@ if(!isset($_SESSION['login']) || $_SESSION['role'] != 'admin'){
 
 <div class="container mt-4">
 
-    <!-- WELCOME -->
     <div class="welcome-box mb-5">
         <h1 class="fw-bold">Dashboard Admin</h1>
         <p class="mb-0">
-            Selamat datang kembali 👋 Kelola data bank sampah dengan mudah dan cepat.
+            Selamat datang kembali ðŸ‘‹ Kelola data bank sampah dengan mudah dan cepat.
         </p>
     </div>
 
-    <!-- MENU -->
     <div class="row g-4">
         
         <div class="col-md-4">
