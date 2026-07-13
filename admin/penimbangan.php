@@ -7,19 +7,21 @@ if(!isset($_SESSION['login'])){
     exit;
 }
 
-// SIMPAN DATA
 if(isset($_POST['simpan'])){
     $id_nasabah = $_POST['id_nasabah'];
     $id_jenis = $_POST['id_jenis'];
     $berat = $_POST['berat'];
     $status = $_POST['status'];
-    $tanggal = date('Y-m-d');
+    $tanggal = $_POST['tanggal'];
+
+    $_SESSION['last_nasabah'] = $id_nasabah;
+    $_SESSION['last_tanggal'] = $tanggal;
 
     mysqli_query($conn, "INSERT INTO penimbangan 
     (id_nasabah, id_jenis, berat, status, tanggal)
     VALUES ('$id_nasabah', '$id_jenis', '$berat', '$status', '$tanggal')");
 
-    $bulanSekarang = date('Y-m');
+    $bulanSekarang = date('Y-m', strtotime($tanggal));
 
     echo "
     <script>
@@ -29,7 +31,6 @@ if(isset($_POST['simpan'])){
     ";
 }
 
-// TAMBAH JENIS SAMPAH BARU
 if(isset($_POST['tambah_jenis'])){
 
     $nama_jenis = $_POST['nama_jenis'];
@@ -113,10 +114,8 @@ if($bulan != ''){
     
     <title>Penimbangan Sampah</title>
 
-    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
@@ -213,7 +212,6 @@ if($bulan != ''){
             width:100% !important;
         }
         
-        /* ===== RESPONSIVE HP ===== */
         @media (max-width:768px){
         
             body{
@@ -225,8 +223,6 @@ if($bulan != ''){
                 max-width:95% !important;
             }
         
-        
-            /* NAVBAR */
             .navbar .container{
                 flex-direction:column;
                 gap:12px;
@@ -253,8 +249,6 @@ if($bulan != ''){
                 padding:5px 10px;
             }
         
-        
-            /* HERO */
             .hero-banner{
                 height:320px !important;
             }
@@ -274,8 +268,6 @@ if($bulan != ''){
                 padding:8px 18px;
             }
         
-        
-            /* CARD ANGKA */
             .col-md-3{
                 width:50%;
             }
@@ -288,14 +280,10 @@ if($bulan != ''){
                 font-size:15px;
             }
         
-        
-            /* VISI MISI */
             .col-md-6{
                 width:100%;
             }
         
-        
-            /* TEXT */
             h2{
                 font-size:24px;
             }
@@ -304,8 +292,6 @@ if($bulan != ''){
                 font-size:15px;
             }
         
-        
-            /* tombol WA */
             .wa-btn{
                 width:55px;
                 height:55px;
@@ -373,17 +359,14 @@ if($bulan != ''){
 
 <body>
 
-<!-- NAVBAR -->
 <nav class="navbar navbar-dark">
     <div class="container">
 
-        <!-- LOGO -->
         <a class="navbar-brand d-flex align-items-center" href="#">
             <img src="../assets/logobs.png" width="40" class="me-2">
             Bank Sampah Green Cikeas
         </a>
 
-        <!-- BACK -->
         <a href="dashboard.php" class="btn btn-outline-light">
             <i class="bi bi-arrow-left"></i> Back
         </a>
@@ -393,7 +376,6 @@ if($bulan != ''){
 
 <div class="container mt-4">
 
-    <!-- JUDUL -->
     <div class="mb-4">
 
         <h2 class="title-page">
@@ -407,12 +389,10 @@ if($bulan != ''){
 
     </div>
 
-    <!-- FORM -->
     <div class="form-card mb-5">
 
         <form method="POST">
 
-            <!-- NASABAH -->
             <div class="mb-3">
                 <label class="form-label">Nasabah</label>
 
@@ -426,7 +406,8 @@ if($bulan != ''){
                     while($n = mysqli_fetch_assoc($nasabah)){
                     ?>
 
-                    <option value="<?= $n['id_nasabah']; ?>">
+                    <option value="<?= $n['id_nasabah']; ?>"
+                    <?= (isset($_SESSION['last_nasabah']) && $_SESSION['last_nasabah'] == $n['id_nasabah']) ? 'selected' : ''; ?>>
                         <?= $n['nama_nasabah']; ?>
                     </option>
 
@@ -435,7 +416,6 @@ if($bulan != ''){
                 </select>
             </div>
 
-            <!-- JENIS -->
             <div class="mb-3">
 
                 <label class="form-label">
@@ -489,7 +469,6 @@ if($bulan != ''){
 
             </div>
 
-            <!-- BERAT -->
             <div class="mb-3">
                 <label class="form-label">Berat (kg)</label>
 
@@ -500,7 +479,6 @@ if($bulan != ''){
                        required>
             </div>
 
-            <!-- STATUS -->
             <div class="mb-3">
                 <label class="form-label">Status</label>
 
@@ -511,8 +489,17 @@ if($bulan != ''){
 
                 </select>
             </div>
+            
+            <div class="mb-3">
+                <label class="form-label">Tanggal</label>
+            
+                <input type="date"
+                       name="tanggal"
+                       class="form-control"
+                       value="<?= $_SESSION['last_tanggal'] ?? date('Y-m-d'); ?>"
+                       required>
+            </div>
 
-            <!-- BUTTON -->
             <button name="simpan" class="btn btn-success">
                 <i class="bi bi-save"></i> Simpan
             </button>
@@ -525,14 +512,12 @@ if($bulan != ''){
 
         <form method="GET" class="d-flex gap-2 flex-wrap">
 
-            <!-- SEARCH -->
             <input type="text"
                 name="search"
                 class="form-control"
                 placeholder="Cari nama nasabah..."
                 value="<?= $search; ?>">
 
-            <!-- BULAN -->
             <input type="month"
                 name="bulan"
                 class="form-control"
@@ -555,7 +540,6 @@ if($bulan != ''){
 
     </div>
 
-    <!-- TABLE -->
     <div class="table-card">
 
         <h4 class="mb-4 d-flex justify-content-between align-items-center">
@@ -684,7 +668,7 @@ if($bulan != ''){
 <script>
 $(document).ready(function() {
 
-    $('select').select2({
+    $('.select2').select2({
         placeholder: "Pilih data",
         width: '100%'
     });
@@ -692,7 +676,6 @@ $(document).ready(function() {
 });
 </script>
 
-<!-- MODAL TAMBAH SAMPAH -->
 <div class="modal fade" id="modalJenis">
 
 <div class="modal-dialog">
