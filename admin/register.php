@@ -11,15 +11,12 @@ if(isset($_POST['daftar'])){
     $alamat = $_POST['alamat'];
     $no_wa  = $_POST['no_wa'];
 
-
-    // masuk users buat login
     mysqli_query($conn, "INSERT INTO users 
     (nama_users, username_users, password_users, role, email)
     VALUES
     ('$nama','$username','$password','nasabah','$email')");
 
 
-    // masuk absensi buat data nasabah
     mysqli_query($conn, "INSERT INTO absensi
     (nama_nasabah, alamat, no_wa, tanggal)
     VALUES
@@ -39,7 +36,6 @@ if(isset($_POST['daftar'])){
     
     <title>Daftar</title>
 
-    <!-- Bootstrap + Icon -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
@@ -100,7 +96,6 @@ if(isset($_POST['daftar'])){
             display: none;
         }
         
-        /* ===== RESPONSIVE HP ===== */
         @media (max-width:768px){
         
             body{
@@ -112,8 +107,6 @@ if(isset($_POST['daftar'])){
                 max-width:95% !important;
             }
         
-        
-            /* NAVBAR */
             .navbar .container{
                 flex-direction:column;
                 gap:12px;
@@ -141,7 +134,6 @@ if(isset($_POST['daftar'])){
             }
         
         
-            /* HERO */
             .hero-banner{
                 height:320px !important;
             }
@@ -161,8 +153,6 @@ if(isset($_POST['daftar'])){
                 padding:8px 18px;
             }
         
-        
-            /* CARD ANGKA */
             .col-md-3{
                 width:50%;
             }
@@ -175,14 +165,10 @@ if(isset($_POST['daftar'])){
                 font-size:15px;
             }
         
-        
-            /* VISI MISI */
             .col-md-6{
                 width:100%;
             }
         
-        
-            /* TEXT */
             h2{
                 font-size:24px;
             }
@@ -192,7 +178,6 @@ if(isset($_POST['daftar'])){
             }
         
         
-            /* tombol WA */
             .wa-btn{
                 width:55px;
                 height:55px;
@@ -231,7 +216,6 @@ if(isset($_POST['daftar'])){
 
 <div class="card register-card shadow p-4">
 
-    <!-- LOGO + TITLE -->
     <div class="text-center mb-3">
         <img src="../assets/logobs.png" width="60">
         <h4 class="mt-2">Bank Sampah Green Cikeas</h4>
@@ -241,7 +225,6 @@ if(isset($_POST['daftar'])){
 
     <form method="POST">
 
-        <!-- NAMA -->
         <div class="mb-3 input-group">
             <span class="input-group-text">
                 <i class="bi bi-person"></i>
@@ -262,7 +245,6 @@ if(isset($_POST['daftar'])){
             required>
         </div>
         
-        <!-- NO WHATSAPP -->
         <div class="mb-3 input-group">
         
             <span class="input-group-text">
@@ -278,7 +260,6 @@ if(isset($_POST['daftar'])){
         
         </div>
 
-        <!-- USERNAME -->
         <div class="mb-3 input-group">
             <span class="input-group-text">
                 <i class="bi bi-person-badge"></i>
@@ -286,7 +267,6 @@ if(isset($_POST['daftar'])){
             <input type="text" name="username" class="form-control" placeholder="Username" required>
         </div>
         
-        <!-- EMAIL -->
         <div class="mb-3 input-group">
         
             <span class="input-group-text">
@@ -302,7 +282,6 @@ if(isset($_POST['daftar'])){
         
         </div>
 
-        <!-- PASSWORD -->
         <div class="mb-3 input-group">
             <span class="input-group-text">
                 <i class="bi bi-lock"></i>
@@ -322,7 +301,7 @@ if(isset($_POST['daftar'])){
         <div class="wa-box" id="waBox">
             <h6 class="mb-2">Hubungi Admin</h6>
             <p class="small text-muted mb-2">
-                Ada pertanyaan? Hubungi admin kami 👋
+                Ada pertanyaan? Hubungi admin kami ðŸ‘‹
             </p>
             
             <a href="https://wa.me/6281286918628"
