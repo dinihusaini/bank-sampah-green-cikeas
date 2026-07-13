@@ -4,7 +4,6 @@
 
         <div class="row">
 
-            <!-- BRAND -->
             <div class="col-md-4 mb-4">
                 <div class="d-flex align-items-center mb-3">
                     <img src="../assets/logobs.png"
@@ -22,7 +21,6 @@
                 </p>
             </div>
 
-            <!-- MENU -->
             <div class="col-md-4 mb-4">
                 <h5 class="fw-bold mb-3">Menu Cepat</h5>
 
@@ -53,7 +51,6 @@
                 </ul>
             </div>
 
-            <!-- KONTAK -->
             <div class="col-md-4 mb-4">
                 <h5 class="fw-bold mb-3">Kontak</h5>
 
@@ -72,21 +69,18 @@
                     banksampahgreencikeas@gmail.com
                 </p>
 
-                <!-- SOSMED -->
                 <div class="d-flex gap-3 mt-3 social-icons">
                     <a href="https://www.instagram.com/banksampah_greencikeas?igsh=eHE4emJzMzVmNmt4"
                         target="_blank">
                         <i class="bi bi-instagram"></i>
                     </a>
 
-                    <!-- TIKTOK -->
                     <a href="https://www.tiktok.com/@banksampah.greencikeas?_r=1&_t=ZS-96UrXY3a2Uv"
                         target="_blank">
 
                         <i class="bi bi-tiktok"></i>
                     </a>
 
-                    <!-- YOUTUBE -->
                     <a href="https://www.youtube.com/@banksampahgreencikeas"
                         target="_blank">
 
@@ -100,7 +94,6 @@
 
     </div>
 
-    <!-- COPYRIGHT -->
     <div style="background:#09471b;" class="text-center py-3">
         © 2026 Bank Sampah Green Cikeas
     </div>
