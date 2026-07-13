@@ -72,7 +72,6 @@ $halaman = "aktivitas";
         display: none;
     }
 
-    /* FOOTER */
     .footer-links li{
         margin-bottom: 10px;
     }
@@ -111,7 +110,6 @@ $halaman = "aktivitas";
         transform: none !important;
     }
     
-    /* ===== RESPONSIVE HP ===== */
         @media (max-width:768px){
         
             body{
@@ -124,7 +122,6 @@ $halaman = "aktivitas";
             }
         
         
-            /* NAVBAR */
             .navbar .container{
                 flex-direction:column;
                 gap:12px;
@@ -152,7 +149,6 @@ $halaman = "aktivitas";
             }
         
         
-            /* HERO */
             .hero-banner{
                 height:320px !important;
             }
@@ -173,7 +169,6 @@ $halaman = "aktivitas";
             }
         
         
-            /* CARD ANGKA */
             .col-md-3{
                 width:50%;
             }
@@ -187,13 +182,11 @@ $halaman = "aktivitas";
             }
         
         
-            /* VISI MISI */
             .col-md-6{
                 width:100%;
             }
         
         
-            /* TEXT */
             h2{
                 font-size:24px;
             }
@@ -203,7 +196,6 @@ $halaman = "aktivitas";
             }
         
         
-            /* tombol WA */
             .wa-btn{
                 width:55px;
                 height:55px;
@@ -240,17 +232,14 @@ $halaman = "aktivitas";
 
 <body class="d-flex flex-column min-vh-100">
 
-<!-- NAVBAR -->
 <nav class="navbar navbar-dark" style="background-color:#0c5f24;">
     <div class="container d-flex justify-content-between align-items-center">
 
-        <!-- LOGO -->
         <a class="navbar-brand d-flex align-items-center" href="dashboard_nasabah.php">
             <img src="../assets/logobs.png" width="40" class="me-2">
             Bank Sampah Green Cikeas
         </a>
 
-        <!-- MENU -->
         <div>
             <a href="dashboard_nasabah.php" class="btn btn-sm <?= ($halaman=='dashboard') ? 'btn-active' : 'btn-light' ?>">Home</a>
             <a href="tentang.php" class="btn btn-sm <?= ($halaman=='tentang') ? 'btn-active' : 'btn-light' ?>">Tentang</a>
@@ -269,7 +258,6 @@ $halaman = "aktivitas";
             <?php } ?>
         </div>
 
-        <!-- USER -->
         <div class="d-flex align-items-center gap-2">
         
         <?php if(isset($_SESSION['login'])){ ?>
@@ -303,7 +291,6 @@ $halaman = "aktivitas";
     </div>
 </nav>
 
-<!-- CONTENT -->
 <main class="flex-fill">
 <div class="container mt-4">
 
@@ -361,7 +348,6 @@ $halaman = "aktivitas";
             </div>
         </div>
 
-        <!-- 3 -->
         <div class="col-md-6 mb-4">
             <div class="card shadow-sm h-100">
                 <img src="../assets/edukasi.jpeg" class="card-img-top">
@@ -381,7 +367,6 @@ $halaman = "aktivitas";
             </div>
         </div>
 
-        <!-- 4 -->
         <div class="col-md-6 mb-4">
             <div class="card shadow-sm h-100">
                 <img src="../assets/gotong.jpeg" class="card-img-top">
@@ -404,12 +389,11 @@ $halaman = "aktivitas";
 
     </div>
 
-    <!-- FLOATING WHATSAPP -->
     <div class="wa-popup">
         <div class="wa-box" id="waBox">
             <h6 class="mb-2">Hubungi Admin</h6>
             <p class="small text-muted mb-2">
-                Ada pertanyaan? Hubungi admin kami 👋
+                Ada pertanyaan? Hubungi admin kami ðŸ‘‹
             </p>
             
             <a href="https://wa.me/6281286918628"
