@@ -25,7 +25,6 @@ if(
 <script src="https://unpkg.com/html5-qrcode"></script>
 
 <style>
-    /* ===== RESPONSIVE HP ===== */
         @media (max-width:768px){
         
             body{
@@ -37,8 +36,6 @@ if(
                 max-width:95% !important;
             }
         
-        
-            /* NAVBAR */
             .navbar .container{
                 flex-direction:column;
                 gap:12px;
@@ -65,8 +62,6 @@ if(
                 padding:5px 10px;
             }
         
-        
-            /* HERO */
             .hero-banner{
                 height:320px !important;
             }
@@ -86,8 +81,6 @@ if(
                 padding:8px 18px;
             }
         
-        
-            /* CARD ANGKA */
             .col-md-3{
                 width:50%;
             }
@@ -100,14 +93,10 @@ if(
                 font-size:15px;
             }
         
-        
-            /* VISI MISI */
             .col-md-6{
                 width:100%;
             }
         
-        
-            /* TEXT */
             h2{
                 font-size:24px;
             }
@@ -116,8 +105,6 @@ if(
                 font-size:15px;
             }
         
-        
-            /* tombol WA */
             .wa-btn{
                 width:55px;
                 height:55px;
