@@ -42,7 +42,6 @@ if(isset($_POST['kirim'])){
             $mail->SMTPAuth = true;
 
 
-            // GANTI INI
             $mail->Username = 'banksampahgreencikeas@gmail.com';
             $mail->Password = 'yifz ephr qyzm uytp';
 
