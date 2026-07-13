@@ -7,11 +7,9 @@ if(!isset($_SESSION['login'])){
     exit;
 }
 
-// FILTER
 $bulan = isset($_GET['bulan']) ? $_GET['bulan'] : '';
 $tahun = isset($_GET['tahun']) ? $_GET['tahun'] : date('Y');
 
-// QUERY FILTER
 $filter_bulan = '';
 
 $id_admin_bs = 12;
@@ -20,10 +18,9 @@ if($bulan != ''){
     $filter_bulan = "AND DATE_FORMAT(p.tanggal, '%m') = '$bulan'";
 }
 
-// PEMASUKAN (PENGEPUL DARI NASABAH SAJA)
 $pemasukan = mysqli_query($conn, "
 SELECT 
-    SUM(p.berat * j.harga_per_kg) as total
+    SUM(p.berat * j.harga_pengepul) as total
 
 FROM penimbangan p
 
@@ -43,7 +40,6 @@ $p = mysqli_fetch_assoc($pemasukan);
 
 $total_pemasukan = $p['total'];
 
-// TABUNGAN NASABAH (selain Panitia)
 $pengeluaran = mysqli_query($conn, "
 SELECT 
     SUM(p.berat * j.harga_nasabah) as total
@@ -66,11 +62,9 @@ $e = mysqli_fetch_assoc($pengeluaran);
 
 $total_pengeluaran = $e['total'];
 
-
-// TABUNGAN GABRUK (Panitia)
 $gabruk = mysqli_query($conn, "
 SELECT 
-    SUM(p.berat * j.harga_per_kg) as total
+    SUM(p.berat * j.harga_pengepul) as total
 
 FROM penimbangan p
 
@@ -91,17 +85,13 @@ $g = mysqli_fetch_assoc($gabruk);
 $total_gabruk = $g['total'];
 
 
-// JIKA NULL JADI 0
 $total_pemasukan = $total_pemasukan ?? 0;
 $total_pengeluaran = $total_pengeluaran ?? 0;
 $total_gabruk = $total_gabruk ?? 0;
 
 
-// KEUNTUNGAN PANITIA
 $keuntungan = $total_pemasukan - $total_pengeluaran;
 
-
-// ARRAY BULAN
 $bulanIndo = [
     1=>'Januari','Februari','Maret','April','Mei','Juni',
     'Juli','Agustus','September','Oktober','November','Desember'
@@ -116,10 +106,8 @@ $bulanIndo = [
     
     <title>Laporan Panitia</title>
 
-    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
     <style>
@@ -168,7 +156,6 @@ $bulanIndo = [
             border-radius:10px;
         }
         
-        /* ===== RESPONSIVE HP ===== */
         @media (max-width:768px){
         
             body{
@@ -180,8 +167,6 @@ $bulanIndo = [
                 max-width:95% !important;
             }
         
-        
-            /* NAVBAR */
             .navbar .container{
                 flex-direction:column;
                 gap:12px;
@@ -208,8 +193,6 @@ $bulanIndo = [
                 padding:5px 10px;
             }
         
-        
-            /* HERO */
             .hero-banner{
                 height:320px !important;
             }
@@ -229,8 +212,6 @@ $bulanIndo = [
                 padding:8px 18px;
             }
         
-        
-            /* CARD ANGKA */
             .col-md-3{
                 width:50%;
             }
@@ -243,14 +224,10 @@ $bulanIndo = [
                 font-size:15px;
             }
         
-        
-            /* VISI MISI */
             .col-md-6{
                 width:100%;
             }
         
-        
-            /* TEXT */
             h2{
                 font-size:24px;
             }
@@ -259,8 +236,6 @@ $bulanIndo = [
                 font-size:15px;
             }
         
-        
-            /* tombol WA */
             .wa-btn{
                 width:55px;
                 height:55px;
@@ -328,17 +303,14 @@ $bulanIndo = [
 
 <body>
 
-<!-- NAVBAR -->
 <nav class="navbar navbar-dark">
     <div class="container">
 
-        <!-- LOGO -->
         <a class="navbar-brand d-flex align-items-center" href="#">
             <img src="../assets/logobs.png" width="40" class="me-2">
             Bank Sampah Green Cikeas
         </a>
 
-        <!-- BACK -->
         <a href="dashboard.php" class="btn btn-outline-light">
             <i class="bi bi-arrow-left"></i> Back
         </a>
@@ -348,7 +320,6 @@ $bulanIndo = [
 
 <div class="container mt-4">
 
-    <!-- JUDUL -->
     <div class="mb-4">
 
         <h2 class="title-page">
@@ -362,12 +333,10 @@ $bulanIndo = [
 
     </div>
 
-    <!-- FILTER -->
     <div class="filter-card mb-4">
 
         <form method="GET" class="row g-3 align-items-end">
 
-            <!-- BULAN -->
             <div class="col-md-4">
 
                 <label class="form-label">
@@ -399,7 +368,6 @@ $bulanIndo = [
 
             </div>
 
-            <!-- TAHUN -->
             <div class="col-md-3">
 
                 <label class="form-label">
@@ -425,7 +393,6 @@ $bulanIndo = [
 
             </div>
 
-            <!-- BUTTON -->
             <div class="col-md-5">
 
                 <button type="submit" class="btn btn-success">
@@ -441,7 +408,6 @@ $bulanIndo = [
 
     </div>
 
-    <!-- TABLE -->
     <div class="table-card">
 
         <h4 class="mb-4">
@@ -508,8 +474,6 @@ $bulanIndo = [
 
     </div>
 
-
-    <!-- TABLE GABRUK -->
     <div class="table-card mt-4">
 
         <h4 class="mb-4">
