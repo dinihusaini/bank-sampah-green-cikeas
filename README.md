@@ -27,24 +27,6 @@ Sistem Informasi Bank Sampah Green Cikeas berbasis website.
 - JavaScript
 - PHPMailer
 
-## Database
-
-Import file database yang tersedia pada folder:
-
-database/
-
-## Konfigurasi
-
-Copy:
-
-config/koneksi-example.php
-
-menjadi:
-
-config/koneksi.php
-
-lalu sesuaikan koneksi database.
-
 ## Developer
 
 KKN Universitas IPWIJA 2026
